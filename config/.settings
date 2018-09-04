@@ -1,0 +1,18 @@
+{
+    "projectName": "Data Integration Specialist superbadge",
+    "username": "anil.mohan@brave-moose-332980.com",
+    "id": "0a76e210-b047-11e8-b4ee-5b0c296ff4ea",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://brave-moose-332980-dev-ed.my.salesforce.com",
+    "workspace": "D:\\AOL\\",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "AuraDefinitionBundle",
+        "StaticResource"
+    ]
+}
