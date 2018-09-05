@@ -2,11 +2,12 @@ public class BillingCalloutService {
     @future(callout = true)
     public static void callBillingService(String projectRef, Decimal billingAmount){
         ServiceCredentials__c srvcCrd = ServiceCredentials__c.getValues('BillingServiceCredential');
-                
+        system.debug('srvcCrd---->'+srvcCrd);
         BillingServiceProxy.project projectInst = new BillingServiceProxy.project();
         projectInst.username = srvcCrd.Username__c;
         projectInst.password = srvcCrd.Password__c;
-        projectInst.projectRef = projectRef;
+        projectInst.projectid =  projectRef == '' ? ' ' : projectRef;
+        projectInst.projectRef =  projectRef == '' ? ' ' : projectRef;
         projectInst.billAmount = billingAmount;
         
         BillingServiceProxy.InvoicesPortSoap11 invPortSoapInst = new BillingServiceProxy.InvoicesPortSoap11();
@@ -17,10 +18,8 @@ public class BillingCalloutService {
             List<Project__c> lstOfPrjts = [SELECT Status__c FROM Project__c WHERE ProjectRef__c = :projectRef];
             for(Project__c prjt : lstOfPrjts){
                 prjt.Status__c = 'Billed';
-                
                 lstOfProjects.add(prjt);
             }
-            
             UPDATE lstOfProjects;
         }
     }

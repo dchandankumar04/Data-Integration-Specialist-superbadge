@@ -10,14 +10,16 @@ public class BillingServiceProxy {
     public class project {
         public String username;
         public String password;
+        public String projectid;
         public String projectRef;
         public Double billAmount;
         private String[] username_type_info = new String[]{'username','http://salesforce.com/th/invoice-web-service',null,'1','1','false'};
         private String[] password_type_info = new String[]{'password','http://salesforce.com/th/invoice-web-service',null,'1','1','false'};
+        private String[] projectid_type_info = new String[]{'projectid','http://salesforce.com/th/invoice-web-service',null,'1','1','false'};
         private String[] projectRef_type_info = new String[]{'projectRef','http://salesforce.com/th/invoice-web-service',null,'1','1','false'};
         private String[] billAmount_type_info = new String[]{'billAmount','http://salesforce.com/th/invoice-web-service',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'http://salesforce.com/th/invoice-web-service','true','false'};
-        private String[] field_order_type_info = new String[]{'username','password','projectRef','billAmount'};
+        private String[] field_order_type_info = new String[]{'username','password','projectRef','projectid','billAmount'};
     }
     public class billProjectResponse_element {
         public String status;
